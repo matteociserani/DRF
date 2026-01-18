@@ -29,6 +29,8 @@ class Post(models.Model):
         max_length=10,
         choices=(('draft', 'Draft'), ('published', 'Published')),
         default='published')
+    objects = models.Manager()
+    postobjects = PostObjects()
     
     class Meta:
         ordering = ('-published',)
